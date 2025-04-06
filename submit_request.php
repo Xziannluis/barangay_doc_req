@@ -21,7 +21,6 @@ $allowed_documents = [
     'Certificate of Residency',
     'Certificate of Indigency',
     'Certificate of Good Moral Character',
-    'Barangay Blotter Report',
     'Barangay Protection Order',
     'Barangay Business Permit'
 ];

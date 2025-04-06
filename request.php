@@ -144,7 +144,7 @@ $result = $stmt->get_result();
                     <option value="Certificate of Residency">Certificate of Residency</option>
                     <option value="Certificate of Indigency">Certificate of Indigency</option>
                     <option value="Certificate of Good Moral Character">Certificate of Good Moral Character</option>
-                    <option value="Barangay Blotter Report">Barangay Blotter Report</option>
+                    
                     <option value="Barangay Protection Order">Barangay Protection Order</option>
                     <option value="Barangay Business Permit">Barangay Business Permit</option>
                 </select>

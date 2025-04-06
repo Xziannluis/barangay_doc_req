@@ -255,9 +255,14 @@ th {
                             <?php echo htmlspecialchars($row['status']); ?>
                         </td>
                         <td class="actions">
-                            <a class="edit" href="dashboard.php?edit=<?php echo $row['id']; ?>">Edit</a>
-                            <a class="delete" href="dashboard.php?delete=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this request?');">Delete</a>
-                        </td>
+    <?php if (strtolower($row['status']) == 'approved') { ?>
+        <a class="generate" href="generate.php?id=<?php echo $row['id']; ?>" target="_blank" style="color: green;">🖨️ Generate Document</a>
+    <?php } else { ?>
+        <a class="edit" href="dashboard.php?edit=<?php echo $row['id']; ?>">Edit</a>
+        <a class="delete" href="dashboard.php?delete=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this request?');">Delete</a>
+    <?php } ?>
+</td>
+
                     </tr>
                 <?php } ?>
             </table>
@@ -283,7 +288,6 @@ th {
             <option value="Certificate of Residency" ' . ($doc_type == 'Certificate of Residency' ? 'selected' : '') . '>Certificate of Residency</option>
             <option value="Certificate of Indigency" ' . ($doc_type == 'Certificate of Indigency' ? 'selected' : '') . '>Certificate of Indigency</option>
             <option value="Certificate of Good Moral Character" ' . ($doc_type == 'Certificate of Good Moral Character' ? 'selected' : '') . '>Certificate of Good Moral Character</option>
-            <option value="Barangay Blotter Report" ' . ($doc_type == 'Barangay Blotter Report' ? 'selected' : '') . '>Barangay Blotter Report</option>
             <option value="Barangay Protection Order" ' . ($doc_type == 'Barangay Protection Order' ? 'selected' : '') . '>Barangay Protection Order</option>
             <option value="Barangay Business Permit" ' . ($doc_type == 'Barangay Business Permit' ? 'selected' : '') . '>Barangay Business Permit</option>
         </select>
